@@ -53,24 +53,6 @@ CREATE TABLE public.receipts (
 -- 5. Storage Policies for bucket "pdf"
 -- NOTE: Bucket 'pdf' must be created manually in the Supabase dashboard before running these.
 
-INSERT INTO storage.policies (id, bucket_id, name, definition, action, created_at, updated_at)
-VALUES (
-  uuid_generate_v4(),
-  'pdf',
-  'Authenticated users can read their own files',
-  'auth.role() = ''authenticated'' AND (storage.filename(name))[1] = auth.uid()',
-  'read',
-  now(),
-  now()
-);
-
-INSERT INTO storage.policies (id, bucket_id, name, definition, action, created_at, updated_at)
-VALUES (
-  uuid_generate_v4(),
-  'pdf',
-  'Authenticated users can write their own files',
-  'auth.role() = ''authenticated'' AND (storage.filename(name))[1] = auth.uid()',
-  'write',
-  now(),
-  now()
-);
+bucket_id = 'pdf'
+AND auth.role() = 'authenticated'
+AND split_part(name, '/', 1)::uuid = auth.uid()
