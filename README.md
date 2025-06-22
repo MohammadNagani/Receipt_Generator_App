@@ -1,16 +1,34 @@
-# receipt_generator
+# 🚛 Receipt Generator App
 
-A new Flutter project.
+A Flutter-based mobile application that allows truck companies to generate, view, and manage digital receipts with cloud support and user authentication.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 📋 User Authentication via **Supabase**
+- 🧾 Generate digital receipts with:
+  - Sender/Recipient details
+  - Truck details (Chassis, Engine No., etc.)
+  - Signature support
+  - Date picker and unique bill number
+- 📤 Upload receipts as **PDF** to Supabase Storage
+- 🕓 View Receipt History for each user
+- 🔍 Search & Filter by recipient name and date range
+- 📥 Download or 📂 View any receipt
+- ✏️ Edit existing receipt (pre-populates old data for re-generation)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔧 Tech Stack
+
+| Layer          | Tech Used            |
+|----------------|----------------------|
+| Language       | Dart (Flutter SDK)   |
+| Backend        | Supabase (Auth + Storage) |
+| PDF Handling   | `pdf` & `printing` Flutter packages |
+| Cloud Storage  | Supabase Storage     |
+| Date Handling  | `intl` package       |
+| File View      | `open_file` package  |
+
+---
